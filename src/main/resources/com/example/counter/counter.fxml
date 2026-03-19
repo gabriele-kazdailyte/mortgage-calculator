@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.counter.UI.LoanController">
+   <children>
+      <Text layoutX="22.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Paskolos suma:" />
+      <TextField fx:id="amountField" layoutX="23.0" layoutY="49.0" prefHeight="25.0" prefWidth="175.0" />
+      <Button layoutX="24.0" layoutY="483.0" mnemonicParsing="false" onAction="#calculate" text="Skaičiuoti" />
+      <TableView fx:id="paymentTable" layoutX="215.0" layoutY="23.0" prefHeight="373.0" prefWidth="575.0" AnchorPane.bottomAnchor="294.0" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="23.0">
+        <columns>
+          <TableColumn fx:id="nrCol" prefWidth="35.33334481716156" text="Nr." />
+          <TableColumn fx:id="dateCol" prefWidth="74.6666374206543" text="Data" />
+            <TableColumn fx:id="paymentCol" prefWidth="94.66666412353516" text="Mokėjimas" />
+            <TableColumn fx:id="interestCol" prefWidth="96.66670227050781" text="Palūkanos" />
+            <TableColumn fx:id="principalCol" prefWidth="96.0" text="Pagrindinis" />
+            <TableColumn fx:id="balanceCol" prefWidth="94.6666259765625" text="Likutis" />
+            <TableColumn fx:id="paidCol" prefWidth="105.33340454101562" text="Iš viso" />
+        </columns>
+      </TableView>
+      <Text layoutX="18.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Metinės palūkanos (%):" />
+      <TextField fx:id="interestField" layoutX="24.0" layoutY="96.0" prefHeight="25.0" prefWidth="175.0" />
+      <ComboBox fx:id="loanChoice" layoutX="23.0" layoutY="270.0" prefHeight="25.0" prefWidth="175.0" promptText="Paskolos tipas" />
+      <Label fx:id="resultLabel" layoutX="85.0" layoutY="666.0" prefHeight="17.0" prefWidth="348.0" />
+      <LineChart fx:id="paymentChart" animated="false" createSymbols="false" layoutX="259.0" layoutY="413.0" prefHeight="268.0" prefWidth="463.0">
+        <xAxis>
+            <NumberAxis label="Mėnuo" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Mokėjimas (€)" />
+        </yAxis>
+      </LineChart>
+      <DatePicker fx:id="startFilterDate" layoutX="23.0" layoutY="547.0" promptText="Rodyti nuo" />
+      <DatePicker fx:id="endFilterDate" layoutX="23.0" layoutY="586.0" promptText="Rodyti iki" />
+      <Button fx:id="filterButton" layoutX="28.0" layoutY="626.0" mnemonicParsing="false" onAction="#filter" text="Filtruoti" />
+      <Text layoutX="18.0" layoutY="679.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pranešimai:" />
+      <CheckBox fx:id="deferralExists" layoutX="25.0" layoutY="317.0" mnemonicParsing="false" onAction="#toggleDeferral" text="Atidėjimas" />
+      <DatePicker fx:id="deferralStartDate" layoutX="23.0" layoutY="342.0" promptText="Atidėti nuo" />
+      <TextField fx:id="deferralTerm" layoutX="23.0" layoutY="395.0" prefHeight="25.0" prefWidth="175.0" />
+      <Text layoutX="25.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atidėjimo trukmė (mėn.):" />
+      <Text layoutX="26.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atidėjimo procentas (%):" />
+      <TextField fx:id="deferralPercentage" layoutX="23.0" layoutY="445.0" prefHeight="25.0" prefWidth="175.0" />
+      <Text layoutX="23.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terminas (metai):" />
+      <TextField fx:id="termYears" layoutX="25.0" layoutY="145.0" prefHeight="25.0" prefWidth="175.0" />
+      <Text layoutX="24.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terminas (mėn.):" />
+      <TextField fx:id="termMonths" layoutX="23.0" layoutY="197.0" prefHeight="25.0" prefWidth="175.0" />
+      <DatePicker fx:id="startDate" layoutX="23.0" layoutY="233.0" promptText="Pradžios data" />
+      <Button fx:id="printReport" layoutX="111.0" layoutY="626.0" mnemonicParsing="false" onAction="#printReport" text="Spausdint ataskaitą" />
+      <CheckBox fx:id="filterExists" layoutX="27.0" layoutY="523.0" mnemonicParsing="false" onAction="#toggleFilter" text="Filtras" />
+   </children>
+</AnchorPane>
