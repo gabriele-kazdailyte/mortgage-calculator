@@ -5,6 +5,13 @@ The application allows users to calculate loan repayment schedules, visualize pa
 
 The program supports multiple loan calculation methods and provides a graphical interface for exploring how loan parameters affect monthly payments.
 
+Note: The application interface is currently available in Lithuanian.
+
+## Screenshot
+
+![Application Interface](https://github.com/user-attachments/assets/1fa3f0af-71a3-4a1a-8a53-fdf28521b027)
+
+
 ---
 
 ## Project Overview
@@ -96,7 +103,6 @@ The principal portion remains **constant each month**, while the interest decrea
 * **Object-Oriented Programming**
 * **CSV file generation**
 
----
 ---
 
 ## How to Run
